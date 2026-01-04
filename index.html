@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avishek Yadav | Professional Portfolio</title>
+    <meta name="description"
+        content="Modern minimalist portfolio showcasing skills, projects, and experience with black and white design">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#000000",
+                        secondary: "#333333",
+                        light: "#f8f8f8",
+                        dark: "#1a1a1a"
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    },
+                    spacing: {
+                        '128': '32rem',
+                        '144': '36rem'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: #000;
+        }
+
+        .skill-bar {
+            transition: width 1s ease-in-out;
+        }
+
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-white font-inter text-gray-800">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-black"
+                    onclick="event.preventDefault(); scrollToTop()">AY.</a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-gray-600 hover:text-black transition-colors duration-300"
+                        onclick="event.preventDefault(); scrollToSection('about')">About</a>
+                    <a href="#skills" class="text-gray-600 hover:text-black transition-colors duration-300"
+                        onclick="event.preventDefault(); scrollToSection('skills')">Skills</a>
+                    <a href="#experience" class="text-gray-600 hover:text-black transition-colors duration-300"
+                        onclick="event.preventDefault(); scrollToSection('experience')">Experience</a>
+                    <a href="https://www.instagram.com/_.autumnlatteszn/" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors duration-300">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                </div>
+                <a href="https://www.instagram.com/_.autumnlatteszn" target="_blank" rel="noopener noreferrer"
+                    class="md:hidden w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors duration-300">
+                    <i class="fab fa-instagram text-lg"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="pt-24">
+        <section class="container mx-auto px-6 py-20">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-8">
+                    <img src="/main.jpeg" alt="Avishek Yadav"
+                        class="w-40 h-40 rounded-full mx-auto shadow-lg object-cover">
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold text-black mb-6">Avishek Yadav</h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8">1st Year CSE Undergraduate • Web Dev & Python/C
+                    Enthusiast</p>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-12">I am a 1st year Computer Science student at
+                    Barak Valley Engineering College. Proficient in HTML, CSS, JavaScript, and learning Python and C.
+                    Building projects to grow my skills.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button
+                        class="px-8 py-3 bg-black text-white font-medium hover:bg-gray-800 transition-colors duration-300"
+                        onclick="scrollToSection('skills')">View Skills</button>
+                    <button
+                        class="px-8 py-3 border-2 border-black text-black font-medium hover:bg-black hover:text-white transition-all duration-300"
+                        onclick="scrollToSection('experience')">Education</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-black mb-12 section-title">About Me</h2>
+                <div class="max-w-3xl mx-auto">
+                    <h3 class="text-2xl font-semibold text-black mb-6">Aspiring Software Engineer</h3>
+                    <p class="text-gray-600 mb-6">I am in my 1st year of CSE at Barak Valley Engineering College. I
+                        focus on web development (HTML, CSS, JavaScript) and I'm learning Python and C. I enjoy
+                        building small projects to apply concepts and improve.</p>
+                    <p class="text-gray-600 mb-8">Currently exploring frontend development and foundational
+                        programming concepts while working on personal projects and learning best practices.</p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center p-6 bg-white rounded-lg border border-gray-200">
+                            <div class="text-3xl font-bold text-black mb-2">3+</div>
+                            <div class="text-gray-600">Projects Completed</div>
+                        </div>
+                        <div class="text-center p-6 bg-white rounded-lg border border-gray-200">
+                            <div class="text-3xl font-bold text-black mb-2">1st Year</div>
+                            <div class="text-gray-600">CSE Undergraduate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-black mb-12 section-title">Technical Skills</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-xl font-semibold text-black mb-8">Core Skills</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">HTML & CSS</span>
+                                    <span class="text-black font-medium">85%</span>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="h-full bg-black skill-bar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">JavaScript</span>
+                                    <span class="text-black font-medium">80%</span>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="h-full bg-black skill-bar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Python</span>
+                                    <span class="text-black font-medium">60%</span>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="h-full bg-black skill-bar" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">C</span>
+                                    <span class="text-black font-medium">80%</span>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="h-full bg-black skill-bar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-black mb-8">Tools & Technologies</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                                <i class="fab fa-html5 text-2xl text-black mr-3"></i>
+                                <span class="text-gray-700">HTML5</span>
+                            </div>
+                            <div class="flex items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                                <i class="fab fa-css3-alt text-2xl text-black mr-3"></i>
+                                <span class="text-gray-700">CSS3</span>
+                            </div>
+                            <div class="flex items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                                <i class="fab fa-js text-2xl text-black mr-3"></i>
+                                <span class="text-gray-700">JavaScript</span>
+                            </div>
+                            <div class="flex items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                                <i class="fab fa-python text-2xl text-black mr-3"></i>
+                                <span class="text-gray-700">Python</span>
+                            </div>
+                            <div class="flex items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                                <i class="fas fa-terminal text-2xl text-black mr-3"></i>
+                                <span class="text-gray-700">C</span>
+                            </div>
+                            <div class="flex items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                                <i class="fab fa-github text-2xl text-black mr-3"></i>
+                                <span class="text-gray-700">GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-black mb-12 section-title">Education</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="relative border-l border-gray-300 ml-4">
+                        <div class="mb-10 ml-8">
+                            <div
+                                class="absolute -left-4 w-8 h-8 bg-black rounded-full flex items-center justify-center">
+                                <div class="w-3 h-3 bg-white rounded-full"></div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-black mb-1">Bachelor of Technology (CSE)</h3>
+                            <div class="text-gray-600 mb-2">Barak Valley Engineering College • 2025 - 2029 (Current)
+                            </div>
+                            <p class="text-gray-700">Pursuing undergraduate studies in Computer Science and
+                                Engineering. Focused on web development and foundational programming.</p>
+                        </div>
+                        <div class="mb-10 ml-8">
+                            <div
+                                class="absolute -left-4 w-8 h-8 bg-black rounded-full flex items-center justify-center">
+                                <div class="w-3 h-3 bg-white rounded-full"></div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-black mb-1">Senior Secondary (12th)</h3>
+                            <div class="text-gray-600 mb-2">Kendriya Vidyalaya CRPF Amerigog • 2011 - 2024</div>
+                            <p class="text-gray-700">Completed senior secondary education with focus on Mathematics,
+                                Physics, Chemistry etc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand & About -->
+                <div>
+                    <div class="text-2xl font-bold mb-4">AY.</div>
+                    <p class="text-gray-400 text-sm">Aspiring software engineer focused on web development and building
+                        creative digital solutions.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 block text-sm"
+                            onclick="event.preventDefault(); scrollToSection('about')">About</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 block text-sm"
+                            onclick="event.preventDefault(); scrollToSection('skills')">Skills</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 block text-sm"
+                            onclick="event.preventDefault(); scrollToSection('experience')">Education</a>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/_.autumnlatteszn/" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 bg-gray-800 hover:bg-black text-white rounded-lg flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="https://github.com/AbhishekYadavOOO7" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 bg-gray-800 hover:bg-black text-white rounded-lg flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+
+                        <a href="https://wa.me/917636851431" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 bg-gray-800 hover:bg-black text-white rounded-lg flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2024 Avishek Yadav. All rights reserved.</p>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-sm">Privacy
+                        Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/917636851431?text=Hi%2C%20Abhishek%2C%20I%20came%20from%20your%20website" target="_blank"
+        rel="noopener noreferrer"
+        class="fixed bottom-8 right-8 w-14 h-14 bg-black hover:bg-gray-800 text-white rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-40">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        // Define data at the beginning
+        const projects = [
+            {
+                "id": 1,
+                "title": "Nova Commerce Platform",
+                "description": "Complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
+                "tags": ["UI/UX Design", "React", "Node.js"],
+                "image": "https://picsum.photos/600/400?random=2"
+            },
+            {
+                "id": 2,
+                "title": "Vital Health Tracker",
+                "description": "Mobile application for health monitoring with intuitive data visualization and personalized insights.",
+                "tags": ["Mobile Design", "React Native", "Firebase"],
+                "image": "https://picsum.photos/600/400?random=3"
+            },
+            {
+                "id": 3,
+                "title": "Quantum Analytics Dashboard",
+                "description": "Real-time financial analytics dashboard with interactive charts and predictive insights.",
+                "tags": ["Data Visualization", "Vue.js", "Python"],
+                "image": "https://picsum.photos/600/400?random=4"
+            }
+        ];
+
+        const skills = [
+            { "name": "HTML & CSS", "percentage": 85 },
+            { "name": "JavaScript", "percentage": 80 },
+            { "name": "Python", "percentage": 60 },
+            { "name": "C", "percentage": 50 }
+        ];
+
+        const experience = [
+            {
+                "title": "B.Tech (CSE) - 1st Year",
+                "company": "Barak Valley Engineering College",
+                "period": "2024 - Present",
+                "description": "Pursuing undergraduate studies in Computer Science and Engineering. Focused on web development and foundational programming."
+            }
+        ];
+
+        // Navigation functions
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Animate skill bars on scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            skillBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    bar.style.width = bar.style.width;
+                }
+            });
+        }
+
+        // Animate elements on scroll
+        window.addEventListener('scroll', animateSkillBars);
+
+        // Initial animation
+        document.addEventListener('DOMContentLoaded', function () {
+            animateSkillBars();
+
+            // Add animation to project cards
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+
+</html>
